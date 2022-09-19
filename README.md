@@ -1,2 +1,2 @@
 # vue-todo-app
-the application to manage TODO list using by Vue.js
+The application to manage TODO list using by Vue.js
