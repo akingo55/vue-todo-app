@@ -24,7 +24,9 @@
       </thead>
 
       <tbody>
-        <tr v-for="todo in todos">
+        <tr v-for="todo in todos"
+          :key="todo.id"
+        >
           <td> {{ todo.id }} </td>
           <td v-if="editableId != todo.id"> {{ todo.content }} </td>
           <td v-else> <input v-model="todo.content" v-on:keyup.enter="completedEditTask"> </td>
