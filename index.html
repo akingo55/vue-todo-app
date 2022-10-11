@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VueTodoApp</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+<div class="nav-bar">
+  <h1>Vue Todo App</h1>
+</div>
+<div id="app">
+  <div class="todo-list">
+    <h2>ToDoList</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Content</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <tr v-for="todo in todos"
+          :key="todo.id"
+        >
+          <td> {{ todo.id }} </td>
+          <td v-if="editableId != todo.id"> {{ todo.content }} </td>
+          <td v-else> <input v-model="todo.content" v-on:keyup.enter="completedEditTask"> </td>
+          <td> <button @click="editTask(todo)">Edit</button></td>
+          <td> <button @click="deleteTask(todo)">Delete</button> </td>
+        </tr>
+        </tbody>
+    </table>
+  </div>
+  <div class="register-new-task">
+    <h2>New Task</h2>
+    <form @submit.prevent="addTask">
+      <input type="text" ref="content">
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

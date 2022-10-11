@@ -1,0 +1,29 @@
+.nav-bar {
+  background: linear-gradient(-90deg, #84CF6A, #16C0B0);
+  padding: 5px;
+  color: white;
+}
+
+#app {
+  padding: 5px;
+}
+
+input {
+  width: 200px;
+  height: 20px;
+}
+
+button {
+  background-color: #1E95EA;
+  color: white;
+  height: 25px;
+}
+
+table {
+  text-align: center;
+  width: 100%;
+}
+
+table th, table td {
+  padding: 10px;
+}
